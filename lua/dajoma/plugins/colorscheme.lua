@@ -1,12 +1,20 @@
 return {
   {
-    "joshdick/onedark.vim",
+    "olivercederborg/poimandres.nvim",
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       -- load the colorscheme here
-      vim.cmd([[colorscheme onedark]])
+      vim.cmd([[colorscheme poimandres]])
     end,
   },
+  -- {
+  --   "savq/melange-nvim",
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     -- load the colorscheme here
+  --     vim.cmd([[colorscheme melange]])
+  --   end,
+  -- },
   -- {
   --   "folke/tokyonight.nvim",
   --   priority = 1000, -- make sure to load this before all the other start plugins
