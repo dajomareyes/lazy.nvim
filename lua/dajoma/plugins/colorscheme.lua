@@ -1,14 +1,5 @@
 return {
   -- {
-  --   "kartikp10/noctis.nvim",
-  --   priority = 1000, -- make sure to load this before all the other start plugins
-  --   transparent = false, -- set this to be able to ignore the default background with the theme
-  --   config = function()
-  --     -- load the colorscheme here
-  --     vim.cmd([[colorscheme noctis]])
-  --   end,
-  -- },
-  -- -- {
   --   "craftzdog/solarized-osaka.nvim",
   --   priority = 1000, -- make sure to load this before all the other start plugins
   --   transparent = false, -- set this to be able to ignore the default background with the theme
@@ -25,14 +16,14 @@ return {
   --     vim.cmd([[colorscheme poimandres]])
   --   end,
   -- },
-  -- -- {
-  --   "savq/melange-nvim",
-  --   priority = 1000, -- make sure to load this before all the other start plugins
-  --   config = function()
-  --     -- load the colorscheme here
-  --     vim.cmd([[colorscheme melange]])
-  --   end,
-  -- },
+  {
+    "savq/melange-nvim",
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- load the colorscheme here
+      vim.cmd([[colorscheme melange]])
+    end,
+  },
   -- {
   --   "folke/tokyonight.nvim",
   --   priority = 1000, -- make sure to load this before all the other start plugins
