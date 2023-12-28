@@ -144,6 +144,13 @@ return {
       filetype = { "go" },
     })
 
+    -- configure omnisharp
+    lspconfig["omnisharp"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetype = { "cs" },
+    })
+
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,
