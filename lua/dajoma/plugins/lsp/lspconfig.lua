@@ -94,6 +94,13 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure lsp for groovy files
+    lspconfig["groovyls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      fileTypes = { "groovy", "Jenkinsfile" },
+    })
+
     -- configure svelte server
     lspconfig["svelte"].setup({
       capabilities = capabilities,
@@ -144,15 +151,26 @@ return {
       filetype = { "go" },
     })
 
-    -- configure omnisharp
-    -- local pid = vim.fn.getpid()
-    -- lspconfig["omnisharp"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = on_attach,
-    --   filetype = { "cs" },
-    --   cmd = { "omnisharp-mono", "--languageserver", "--hostPID", tostring(pid) },
-    -- })
-    --
+    -- configure lua server (with special settings)
+    lspconfig["lua_ls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = { -- custom settings for lua
+        Lua = {
+          -- make the language server recognize "vim" global
+          diagnostics = {
+            globals = { "vim" },
+          },
+          workspace = {
+            -- make language server aware of runtime files
+            library = {
+              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+              [vim.fn.stdpath("config") .. "/lua"] = true,
+            },
+          },
+        },
+      },
+    })
 
     lspconfig.omnisharp.setup({
       on_attach = on_attach,
@@ -187,27 +205,6 @@ return {
       -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
       -- true
       analyze_open_documents_only = false,
-    })
-
-    -- configure lua server (with special settings)
-    lspconfig["lua_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = { -- custom settings for lua
-        Lua = {
-          -- make the language server recognize "vim" global
-          diagnostics = {
-            globals = { "vim" },
-          },
-          workspace = {
-            -- make language server aware of runtime files
-            library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.stdpath("config") .. "/lua"] = true,
-            },
-          },
-        },
-      },
     })
   end,
 }
