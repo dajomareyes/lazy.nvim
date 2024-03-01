@@ -1,4 +1,12 @@
 return {
+  {
+    "rebelot/kanagawa.nvim",
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- load the colorscheme here
+      vim.cmd([[colorscheme kanagawa-wave]])
+    end,
+  },
   -- {
   --   "craftzdog/solarized-osaka.nvim",
   --   priority = 1000, -- make sure to load this before all the other start plugins
@@ -16,14 +24,14 @@ return {
   --     vim.cmd([[colorscheme poimandres]])
   --   end,
   -- },
-  {
-    "projekt0n/github-nvim-theme",
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      -- load the colorscheme here
-      vim.cmd([[colorscheme github_dark_default]])
-    end,
-  },
+  -- {
+  --   "projekt0n/github-nvim-theme",
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     -- load the colorscheme here
+  --     vim.cmd([[colorscheme github_dark_default]])
+  --   end,
+  -- },
   -- {
   --   "joshdick/onedark.vim",
   --   priority = 1000, -- make sure to load this before all the other start plugins
