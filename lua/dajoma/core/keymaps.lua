@@ -15,6 +15,14 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- delete single character without copying into register
 -- keymap.set("n", "x", '"_x')
 
+-- buffer navigation
+keymap.set("n", "<Tab>", "<cmd>bn<CR>", { desc = "Next buffer" }) -- next buffer
+keymap.set("n", "<S-Tab>", "<cmd>bp<CR>", { desc = "Previous buffer" }) -- previous buffer
+
+-- tab indentation
+keymap.set("v", "<Tab>", ">gv", { desc = "Indent lines" })
+keymap.set("v", "<S-Tab>", ">gv", { desc = "Back indent lines" })
+
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
