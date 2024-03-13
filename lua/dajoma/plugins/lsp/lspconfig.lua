@@ -88,7 +88,7 @@ return {
       on_attach = on_attach,
     })
 
-    -- configure tailwindcss server
+    -- configure tailwindcss server, commenting this out for now
     lspconfig["tailwindcss"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
