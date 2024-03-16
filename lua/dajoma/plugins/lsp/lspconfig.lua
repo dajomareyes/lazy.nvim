@@ -97,6 +97,11 @@ return {
     -- configure lsp for groovy files
     lspconfig["groovyls"].setup({
       capabilities = capabilities,
+      cmd = {
+        "java",
+        "-jar",
+        "/Users/david.reyes/.local/share/nvim/mason/packages/groovy-language-server/build/libs/groovy-language-server-all.jar",
+      },
       on_attach = on_attach,
       fileTypes = { "groovy", "Jenkinsfile" },
     })

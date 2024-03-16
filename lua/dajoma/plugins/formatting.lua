@@ -27,6 +27,7 @@ return {
         graphql = { "prettier" },
         lua = { "stylua" },
         python = { "isort", "black" },
+        groovy = { "npm-groovy-lint" },
       },
       format_on_save = function()
         show_notification("File formatted!", "info")
