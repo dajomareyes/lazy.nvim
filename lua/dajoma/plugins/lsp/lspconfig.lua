@@ -82,6 +82,17 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure eslint to support flat version files
+    lspconfig.eslint.setup({
+      capabilities = capabilities,
+      on_attach = function(_, bufnr)
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = bufnr,
+          command = "EslintFixAll",
+        })
+      end,
+    })
+
     -- configure css server
     lspconfig["cssls"].setup({
       capabilities = capabilities,

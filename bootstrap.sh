@@ -21,3 +21,14 @@ brew install cargo
 brew install mono
 # keep track of where this is located
 brew install dotnet
+
+# check for node installation
+if [ -x "$(command -v node)" ]; then
+    echo "node is installed"
+else
+    echo "node is not installed"
+    exit 1
+fi
+
+# globally install npm packages for lsp support
+npm i -g vscode-langservers-extracted
