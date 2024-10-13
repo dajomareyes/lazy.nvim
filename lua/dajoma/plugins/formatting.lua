@@ -12,7 +12,24 @@ return {
       })
     end
 
+    local has_yarn = vim.fn.executable("yarn") == 1
+
+    local prettier_command = has_yarn and "yarn prettier" or "prettier"
+
     conform.setup({
+      log_level = vim.log.levels.DEBUG,
+      formatters = {
+        {
+          name = "prettier",
+          command = prettier_command .. " --stdin-filepath" .. vim.api.nvim_buf_get_name(0),
+          filetypes = {
+            "javascript",
+            "typescript",
+            "javascriptreact",
+            "typescriptreact",
+          },
+        },
+      },
       formatters_by_ft = {
         javascript = { "prettier" },
         typescript = { "prettier" },
