@@ -1,12 +1,12 @@
 return {
-  {
-    "rebelot/kanagawa.nvim",
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      -- load the colorscheme here
-      vim.cmd([[colorscheme kanagawa-dragon]])
-    end,
-  },
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     -- load the colorscheme here
+  --     vim.cmd([[colorscheme kanagawa-dragon]])
+  --   end,
+  -- },
   -- {
   --   "craftzdog/solarized-osaka.nvim",
   --   priority = 1000, -- make sure to load this before all the other start plugins
@@ -16,6 +16,16 @@ return {
   --     vim.cmd([[colorscheme solarized-osaka]])
   --   end,
   -- },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    transparent = false, -- set this to be able to ignore the default background with the theme
+    config = function()
+      -- load the colorscheme here
+      vim.cmd([[colorscheme catppuccin]])
+    end,
+  },
   -- {
   --   "olivercederborg/poimandres.nvim",
   --   priority = 1000, -- make sure to load this before all the other start plugins
