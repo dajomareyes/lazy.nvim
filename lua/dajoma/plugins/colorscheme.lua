@@ -27,6 +27,32 @@ return {
     end,
   },
   -- {
+  --   "xero/miasma.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd("colorscheme miasma")
+  --   end,
+  -- },
+  -- {
+  --   "ayu-theme/ayu-vim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd("colorscheme ayu")
+  --   end,
+  -- },
+  -- {
+  --   "ellisonleao/gruvbox.nvim",
+  --   name = "gruvbox",
+  --   priority = 1000,
+  --   transparent = false, -- set this to be able to ignore the default background with the theme
+  --   config = function()
+  --     -- load the colorscheme here
+  --     vim.cmd([[colorscheme gruvbox]])
+  --   end,
+  -- },
+  -- {
   --   "olivercederborg/poimandres.nvim",
   --   priority = 1000, -- make sure to load this before all the other start plugins
   --   config = function()
