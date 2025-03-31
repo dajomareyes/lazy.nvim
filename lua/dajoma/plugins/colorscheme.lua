@@ -17,15 +17,25 @@ return {
   --   end,
   -- },
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "p00f/alabaster.nvim",
+    name = "alabaster",
     priority = 1000,
     transparent = false, -- set this to be able to ignore the default background with the theme
     config = function()
       -- load the colorscheme here
-      vim.cmd([[colorscheme catppuccin]])
+      vim.cmd([[colorscheme alabaster]])
     end,
   },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   priority = 1000,
+  --   transparent = false, -- set this to be able to ignore the default background with the theme
+  --   config = function()
+  --     -- load the colorscheme here
+  --     vim.cmd([[colorscheme catppuccin]])
+  --   end,
+  -- },
   -- {
   --   "xero/miasma.nvim",
   --   lazy = false,
