@@ -16,16 +16,16 @@ return {
   --     vim.cmd([[colorscheme solarized-osaka]])
   --   end,
   -- },
-  {
-    "p00f/alabaster.nvim",
-    name = "alabaster",
-    priority = 1000,
-    transparent = false, -- set this to be able to ignore the default background with the theme
-    config = function()
-      -- load the colorscheme here
-      vim.cmd([[colorscheme alabaster]])
-    end,
-  },
+  -- {
+  --   "p00f/alabaster.nvim",
+  --   name = "alabaster",
+  --   priority = 1000,
+  --   transparent = false, -- set this to be able to ignore the default background with the theme
+  --   config = function()
+  --     -- load the colorscheme here
+  --     vim.cmd([[colorscheme alabaster]])
+  --   end,
+  -- },
   -- {
   --   "catppuccin/nvim",
   --   name = "catppuccin",
@@ -70,14 +70,14 @@ return {
   --     vim.cmd([[colorscheme poimandres]])
   --   end,
   -- },
-  -- {
-  --   "projekt0n/github-nvim-theme",
-  --   priority = 1000, -- make sure to load this before all the other start plugins
-  --   config = function()
-  --     -- load the colorscheme here
-  --     vim.cmd([[colorscheme github_dark_default]])
-  --   end,
-  -- },
+  {
+    "projekt0n/github-nvim-theme",
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- load the colorscheme here
+      vim.cmd([[colorscheme github_dark_high_contrast]])
+    end,
+  },
   -- {
   --   "joshdick/onedark.vim",
   --   priority = 1000, -- make sure to load this before all the other start plugins

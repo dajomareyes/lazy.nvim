@@ -14,6 +14,8 @@ return {
       local keymap = vim.keymap
 
       keymap.set("n", "<leader>cc", "<cmd>CopilotChatToggle<CR>", { desc = "Toggle Copilot chat" })
+      keymap.set("n", "<leader>cs", "<cmd>CopilotChatModel<CR>", { desc = "Select Copilot chat model" })
+      keymap.set("n", "<leader>ce", "<cmd>CopilotChatExplain<CR>", { desc = "Select Copilot chat model" })
     end,
   },
 }
