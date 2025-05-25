@@ -34,7 +34,7 @@ opt.backspace = {"start", "eol", "indent"}
 opt.splitright = true
 opt.splitbelow = true
 
-opt.swapfile = false 
+opt.swapfile = false
 opt.backup = false
 opt.undofile = true
 

@@ -11,9 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- treat Jenkinsfiles as groovy files
-vim.api.nvim_command("autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy")
-
 require("lazy").setup({ { import = "dajoma.plugins" }, { import = "dajoma.plugins.lsp" } }, {
   install = {
     colorscheme = { "nightfly" },
