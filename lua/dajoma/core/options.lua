@@ -1,43 +1,60 @@
-local opt = vim.opt -- for conciseness
+-- vim.g.loaded_netrw = 0
+-- vim.g.loaded_netrwPlugin = 0
+-- vim.cmd("let g:netrw_liststyle = 3")
+vim.cmd("let g:netrw_banner = 0 ")
 
--- line numbers
-opt.relativenumber = true -- show relative line numbers
-opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+vim.opt.guicursor = ""
+vim.opt.nu = true
+vim.opt.relativenumber = true
 
--- tabs & indentation
-opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
-opt.shiftwidth = 2 -- 2 spaces for indent width
-opt.expandtab = true -- expand tab to spaces
-opt.autoindent = true -- copy indent from current line when starting new one
-opt.colorcolumn = "80" -- for better readability, highlight column 80
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.wrap = false
 
--- line wrapping
-opt.wrap = false -- disable line wrapping
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
 
--- search settings
-opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+vim.opt.incsearch = true
+vim.opt.inccommand = "split"
 
--- cursor line
-opt.cursorline = true -- highlight the current cursor line
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
--- appearance
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
 
--- turn on termguicolors for nightfly colorscheme to work
--- (have to use iterm2 or any other true color terminal)
-opt.termguicolors = true
-opt.background = "dark" -- colorschemes that can be light or dark will be made dark
-opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+
+-- Enable folding ( setup in nvim-ufo )
+vim.o.foldenable = true -- Enable folding by default
+vim.o.foldmethod = "manual" -- Default fold method (change as needed)
+vim.o.foldlevel = 99 -- Open most folds by default
+vim.o.foldcolumn = "0"
 
 -- backspace
-opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+vim.opt.backspace = { "start", "eol", "indent" }
+
+--split windows
+vim.opt.splitright = true --split vertical window to the right
+vim.opt.splitbelow = true --split horizontal window to the bottom
+
+vim.opt.isfname:append("@-@")
+vim.opt.updatetime = 50
+vim.opt.colorcolumn = "80"
 
 -- clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+vim.opt.clipboard:append("unnamedplus") --use system clipboard as default
+vim.opt.hlsearch = true
 
--- split windows
-opt.splitright = true -- split vertical window to the right
-opt.splitbelow = true -- split horizontal window to the bottom
+-- for easy mouse resizing, just incase
+vim.opt.mouse = "a"
 
--- turn off swapfile
-opt.swapfile = false
+-- gets rid of line with white spaces
+vim.g.editorconfig = true
