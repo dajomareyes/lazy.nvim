@@ -40,7 +40,7 @@ return {
                 "html",
                 "cssls",
                 "tailwindcss",
-                "gopls",
+                -- "gopls", -- not working at the moment need to upgrade the og version
                 "emmet_ls",
                 "emmet_language_server",
                 -- "eslint",
