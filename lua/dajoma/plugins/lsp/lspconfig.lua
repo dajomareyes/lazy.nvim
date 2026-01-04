@@ -156,8 +156,25 @@ return {
 
     -- configure python server
     lspconfig["pyright"].setup({
-      capabilities = capabilities,
       on_attach = on_attach,
+      capabilities = capabilities,
+
+      single_file_support = true,
+      settings = {
+        pyright = {
+          disableLanguageServices = false,
+          disableOrganizeImports = false,
+        },
+        python = {
+          analysis = {
+            autoImportCompletions = true,
+            autoSearchPaths = true,
+            diagnosticMode = "workspace", -- openFilesOnly, workspace
+            typeCheckingMode = "basic", -- off, basic, strict
+            useLibraryCodeForTypes = false,
+          },
+        },
+      },
     })
 
     -- configure gopls server
